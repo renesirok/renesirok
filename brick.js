@@ -201,7 +201,12 @@ function draw(){
 	}
 	else{
 	lives--;
-	
+	if(lives < 0){
+		swal({title: "GAME OVER!", text: "YOU LOOSER BIG L"}).then (function(){location.reload();
+		});
+	clearInterval(draw);
+	tocke = 0;
+	}
 	else{
 	x=canvas.width/2;
 	y = canvas.height-30;
