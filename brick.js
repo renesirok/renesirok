@@ -10,7 +10,7 @@ var paddleX=(canvas.width-paddleWidth)/2;
 var rightPressed=false;  
 var leftPressed=false;  
 var ballRadius=7;
-var brickRowCount=4;
+var brickRowCount=3;
 var brickColumnCount=12;
 
 var count=brickColumnCount*brickRowCount;
