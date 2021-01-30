@@ -201,7 +201,7 @@ function draw(){
 	}
 	else{
 	lives--;
-	if(lives < 0){
+	if(lives == -1){
 		swal({title: "GAME OVER!", text: "YOU LOOSER BIG L"}).then (function(){location.reload();
 		});
 	clearInterval(draw);
