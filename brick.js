@@ -201,11 +201,7 @@ function draw(){
 	}
 	else{
 	lives--;
-	if(!lives) {
-	swal("Good job!", "success");;
-	document.location.reload();
-
-	}
+	
 	else{
 	x=canvas.width/2;
 	y = canvas.height-30;
