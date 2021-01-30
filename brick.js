@@ -10,7 +10,7 @@ var paddleX=(canvas.width-paddleWidth)/2;
 var rightPressed=false;  
 var leftPressed=false;  
 var ballRadius=7;
-var brickRowCount=7;
+var brickRowCount=4;
 var brickColumnCount=12;
 
 var count=brickColumnCount*brickRowCount;
@@ -91,8 +91,6 @@ function drawBricks(){
 				bricks[c][r].y=brickY;
 				ctx.beginPath();
 				ctx.drawImage(brick_img1,brickX-15,brickY,brickWidth,brickHeight);
-				//ctx.fillStyle="#0095DD";
-				//ctx.fill();
 				ctx.closePath();
 			}
 			
@@ -103,8 +101,6 @@ function drawBricks(){
 				bricks[c][r].y=brickY;
 				ctx.beginPath();
 				ctx.drawImage(brick_img2,brickX-15,brickY,brickWidth,brickHeight);
-				//ctx.fillStyle="#0095DD";
-				//ctx.fill();
 				ctx.closePath();
 			}
 			
@@ -115,8 +111,6 @@ function drawBricks(){
 				bricks[c][r].y=brickY;
 				ctx.beginPath();
 				ctx.drawImage(brick_img3,brickX-15,brickY,brickWidth,brickHeight);
-				//ctx.fillStyle="#0095DD";
-				//ctx.fill();
 				ctx.closePath();
 			}
 			
@@ -139,11 +133,7 @@ function collisionDetection(){
 					dy=-dy;
 					b.status=0;
 					score++;
-					count--;
-						if(count==0){
-							swal("Good job!", "You clicked the button!", "success");
-							document.location.reload();
-						}
+					
 				}
 			}
 			
@@ -206,6 +196,7 @@ function draw(){
 		});
 	clearInterval(draw);
 	tocke = 0;
+	lives = 3;
 	}
 	else{
 	x=canvas.width/2;
@@ -231,20 +222,16 @@ function draw(){
 	paddleX-=7;
 
 
-		if(score==84){
+		if(score==48){
       
 			swal({title: "YOU WON!", text: "You scored "+ tocke+" points", type: "sucess"}).then(function(){
 			location.reload();
 			});
         clearInterval(draw);
         tocke = 0;
+	lives = 3;
 		}
-	if(lives < 0){
-		swal({title: "GAME OVER!", text: "YOU LOOSER BIG L"}).then (function(){location.reload();
-		});
-	clearInterval(draw);
-	tocke = 0;
-	}
+
 
 }
 
