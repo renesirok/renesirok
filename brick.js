@@ -227,6 +227,13 @@ function draw(){
 			swal({title: "YOU WON!", text: "You scored "+ tocke+" points", type: "sucess"}).then(function(){
 			location.reload();
 			});
+		else if(lives == -1){
+		swal({title: "GAME OVER!", text: "YOU LOOSER BIG L"}).then (function(){location.reload();
+		});
+	clearInterval(draw);
+	tocke = 0;
+	lives = 3;
+	}
         clearInterval(draw);
         tocke = 0;
 	lives = 3;
