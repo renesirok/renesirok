@@ -187,7 +187,7 @@ function draw(){
 	drawPaddle();
 	drawScore();
 	drawLives();
-	//drawToBeat();
+	
 
 	collisionDetection();
 
@@ -238,7 +238,12 @@ function draw(){
         clearInterval(draw);
         tocke = 0;
 		}
-
+	if(lives < 0){
+		swal({title: "GAME OVER!", text: "YOU LOOSER BIG L"}).then (function(){location.reload();
+		});
+	clearInterval(draw);
+	tocke = 0;
+	}
 
 }
 
